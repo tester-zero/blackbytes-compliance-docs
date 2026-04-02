@@ -43,6 +43,7 @@
         overflow-x: hidden;
       }
 
+      /* Subtle noise texture for a tactical feel */
       body::before {
         content: "";
         position: fixed;
@@ -97,12 +98,12 @@
         line-height: 1.6;
       }
 
-      /* --- NEW CONTACT ENTITY SECTION --- */
+      /* --- CONTACT ENTITY SECTION (FOR PLAY STORE COMPLIANCE) --- */
       .contact-entity {
         background: rgba(232, 255, 90, 0.03);
         border: 1px solid var(--border2);
         border-radius: 14px;
-        padding: 20px;
+        padding: 24px;
         margin-bottom: 32px;
         text-align: left;
       }
@@ -122,7 +123,7 @@
         font-weight: 700;
         font-size: 15px;
         color: var(--white);
-        margin-bottom: 4px;
+        margin-bottom: 6px;
         display: block;
       }
 
@@ -133,6 +134,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        transition: color 0.2s ease;
       }
 
       .entity-contact:hover {
@@ -190,6 +192,7 @@
         font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.05em;
+        line-height: 1.8;
       }
     </style>
   </head>
@@ -200,7 +203,7 @@
       </div>
 
       <h1>Compliance Hub</h1>
-      <p class="subtitle">Legal transparency and documentation for BlackBytes.</p>
+      <p class="subtitle">Official transparency and legal documentation for the BlackBytes ecosystem.</p>
 
       <div class="contact-entity">
         <span class="entity-label">Publishing Entity</span>
@@ -229,7 +232,8 @@
       </div>
 
       <footer>
-        &copy; 2026 BLACKBYTES &middot; RAJASTHAN, INDIA
+        &copy; 2026 BLACKBYTES &middot; JAIPUR, RAJASTHAN, INDIA<br>
+        DEVELOPER ID: YASHPAL YADAV
       </footer>
     </div>
   </body>
