@@ -40,10 +40,9 @@
         align-items: center;
         justify-content: center;
         -webkit-font-smoothing: antialiased;
-        overflow: hidden;
+        overflow-x: hidden;
       }
 
-      /* Noise Overlay to match Policy Page */
       body::before {
         content: "";
         position: fixed;
@@ -59,7 +58,7 @@
         z-index: 1;
         max-width: 480px;
         width: 100%;
-        padding: 40px 24px;
+        padding: 60px 24px;
         text-align: center;
         animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
       }
@@ -82,15 +81,10 @@
         box-shadow: 0 20px 40px rgba(0,0,0,0.4);
       }
 
-      .brand-icon svg {
-        width: 40px;
-        height: 40px;
-      }
-
       h1 {
         font-family: "Syne", sans-serif;
         font-weight: 800;
-        font-size: 32px;
+        font-size: 28px;
         color: var(--white);
         margin-bottom: 8px;
         letter-spacing: -0.03em;
@@ -99,10 +93,53 @@
       p.subtitle {
         font-size: 14px;
         color: var(--muted);
-        margin-bottom: 48px;
+        margin-bottom: 40px;
         line-height: 1.6;
       }
 
+      /* --- NEW CONTACT ENTITY SECTION --- */
+      .contact-entity {
+        background: rgba(232, 255, 90, 0.03);
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        padding: 20px;
+        margin-bottom: 32px;
+        text-align: left;
+      }
+
+      .entity-label {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .entity-name {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--white);
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .entity-contact {
+        font-size: 13px;
+        color: var(--text);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .entity-contact:hover {
+        color: var(--accent2);
+      }
+
+      /* --- DOC LIST --- */
       .doc-list {
         display: flex;
         flex-direction: column;
@@ -113,7 +150,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 24px;
+        padding: 18px 24px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 14px;
@@ -123,21 +160,17 @@
 
       .doc-link:hover {
         border-color: var(--accent);
-        transform: scale(1.02);
         background: #161616;
       }
 
-      .doc-info {
-        text-align: left;
-      }
+      .doc-info { text-align: left; }
 
       .doc-name {
         display: block;
         font-family: "Syne", sans-serif;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 15px;
         color: var(--white);
-        margin-bottom: 2px;
       }
 
       .doc-meta {
@@ -145,35 +178,16 @@
         font-size: 10px;
         color: var(--muted);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
       }
 
-      .doc-arrow {
-        color: var(--accent);
-        font-size: 18px;
-        transition: transform 0.2s ease;
-      }
+      .doc-arrow { color: var(--accent); font-size: 18px; }
 
-      .doc-link:hover .doc-arrow {
-        transform: translateX(4px);
-      }
-
-      /* Disabled state for future docs */
-      .doc-link.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        filter: grayscale(1);
-      }
-
-      .doc-link.disabled:hover {
-        transform: none;
-        border-color: var(--border);
-      }
+      .disabled { opacity: 0.4; cursor: not-allowed; }
 
       footer {
-        margin-top: 64px;
+        margin-top: 60px;
         font-family: "DM Mono", monospace;
-        font-size: 11px;
+        font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.05em;
       }
@@ -182,23 +196,25 @@
   <body>
     <div class="hub-container">
       <div class="brand-icon">
-        <img
-              src="assets/app_icon.webp"
-              alt="BlackBytes Icon"
-              class="title-icon"
-              width="32"
-              height="32"
-            />
+        <img src="assets/app_icon.webp" alt="BlackBytes Icon" width="48" height="48" />
       </div>
 
-      <h1>BlackBytes: Darkweb to Devs</h1>
-      <p class="subtitle">Official legal documentation and privacy standards for the BlackBytes ecosystem.</p>
+      <h1>Compliance Hub</h1>
+      <p class="subtitle">Legal transparency and documentation for BlackBytes.</p>
+
+      <div class="contact-entity">
+        <span class="entity-label">Publishing Entity</span>
+        <span class="entity-name">BlackBytes: Focus on Security</span>
+        <a href="mailto:blackbytes.team@protonmail.com" class="entity-contact">
+          <span>📩 blackbytes.team@protonmail.com</span>
+        </a>
+      </div>
 
       <div class="doc-list">
         <a href="privacy-policy/blackbytes-privacy-policy.html" class="doc-link">
           <div class="doc-info">
             <span class="doc-name">Privacy Policy</span>
-            <span class="doc-meta">Effective April 1, 2026</span>
+            <span class="doc-meta">Updated April 1, 2026</span>
           </div>
           <span class="doc-arrow">→</span>
         </a>
@@ -213,7 +229,7 @@
       </div>
 
       <footer>
-        &copy; 2026 BLACKBYTES &middot; FOCUS ON SECURITY
+        &copy; 2026 BLACKBYTES &middot; RAJASTHAN, INDIA
       </footer>
     </div>
   </body>
