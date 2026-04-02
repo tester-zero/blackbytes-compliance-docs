@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use — BlackBytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --border: #1e1e1e;
+        --border2: #2a2a2a;
+        --accent: #e8ff5a;
+        --accent2: #5affd6;
+        --text: #e2e2e2;
+        --muted: #6b6b6b;
+        --muted2: #444444;
+        --white: #ffffff;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.75;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.025;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wrapper { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+
+      header {
+        padding: 52px 0 48px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+      }
+
+      .title-row { display: flex; align-items: center; gap: 12px; }
+      .page-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 6vw, 42px);
+        letter-spacing: -0.03em;
+        color: var(--white);
+        line-height: 1.1;
+      }
+
+      .date-chip {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .date-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 64px;
+      }
+
+      .summary-card { background: var(--surface); padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; }
+      .summary-card .label { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+      .summary-card .value { font-size: 13px; color: var(--text); font-weight: 400; }
+
+      section { margin-bottom: 56px; animation: fadeUp 0.5s ease both; }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+      .section-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+      .section-num { font-family: "DM Mono", monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.08em; flex-shrink: 0; }
+      
+      h2 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 20px; color: var(--white); }
+      h3 { font-family: "Syne", sans-serif; font-weight: 600; font-size: 14px; color: var(--accent2); margin: 24px 0 12px; }
+
+      p, li { font-size: 14.5px; color: var(--text); margin-bottom: 12px; }
+      ul { margin-left: 20px; margin-bottom: 20px; }
+      
+      .callout { padding: 18px 20px; border-radius: 10px; margin: 20px 0; font-size: 13.5px; background: rgba(232, 255, 90, 0.05); border: 1px solid rgba(232, 255, 90, 0.18); }
+      
+      footer { border-top: 1px solid var(--border); padding-top: 36px; margin-top: 80px; display: flex; align-items: center; justify-content: space-between; }
+      .footer-brand { font-family: "Syne", sans-serif; font-weight: 700; font-size: 14px; color: var(--muted2); }
+      
+      a { color: var(--accent2); text-decoration: none; }
+      strong { font-weight: 600; color: var(--white); }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="title-row">
+          <img src="../assets/app_icon.webp" alt="Icon" width="32" height="32" />
+          <h1 class="page-title">Terms of Use</h1>
+        </div>
+        <div class="date-chip">Last Updated: April 1, 2026</div>
+      </header>
+
+      <div class="summary-grid">
+        <div class="summary-card"><span class="label">Min. Age</span><span class="value">13+ Years</span></div>
+        <div class="summary-card"><span class="label">Jurisdiction</span><span class="value">India</span></div>
+        <div class="summary-card"><span class="label">Usage</span><span class="value">Educational Only</span></div>
+      </div>
+
+      <section id="s1">
+        <div class="section-header"><span class="section-num">01</span><h2>Acceptance of Terms</h2></div>
+        <p>By downloading, installing, accessing, or using the BlackBytes mobile application ("the App"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Use ("Terms"). These Terms constitute a legally binding agreement between you and the developer of BlackBytes.</p>
+      </section>
+
+      <section id="s2">
+        <div class="section-header"><span class="section-num">02</span><h2>Eligibility</h2></div>
+        <p>The App is intended for users who are at least 13 years old (or the minimum age of digital consent in their jurisdiction). By using the App, you represent that you meet this requirement.</p>
+      </section>
+
+      <section id="s3">
+        <div class="section-header"><span class="section-num">03</span><h2>Use of the Application</h2>
+        </div>
+        <h3>3.1 Purpose of the App</h3>
+        <p>BlackBytes is designed exclusively for educational and informational purposes, providing cybersecurity tips, digital safety awareness, and general guidance on protecting yourself online.</p>
+        <div class="callout">
+            <strong>Not a Replacement for Professional Services:</strong> BlackBytes is NOT a replacement for professional cybersecurity consultations or certified security assessments.
+        </div>
+      </section>
+
+      <section id="s4">
+        <div class="section-header"><span class="section-num">04</span><h2>Content Disclaimer</h2></div>
+        <h3>4.1 No Guarantee of Accuracy</h3>
+        <p>While we strive to provide accurate information, we make no warranties regarding the accuracy, completeness, or timeliness of any content. Cybersecurity is rapidly evolving, and information may become outdated.</p>
+      </section>
+
+      <section id="s5">
+        <div class="section-header"><span class="section-num">05</span><h2>Intellectual Property</h2></div>
+        <p>All content, design elements, and functionality are owned by the developer of BlackBytes. You may not copy, reproduce, or modify App content for commercial purposes without explicit permission.</p>
+      </section>
+
+      <section id="s6">
+        <div class="section-header"><span class="section-num">06</span><h2>User Responsibilities</h2></div>
+        <h3>6.1 Lawful Use</h3>
+        <p>You agree to use the App only for lawful purposes. You shall not use the App to engage in illegal activities, harm others, or conduct unauthorized security testing on systems you do not own.</p>
+      </section>
+
+      <section id="s7">
+        <div class="section-header"><span class="section-num">07</span><h2>Third-Party Services</h2></div>
+        <p>The App utilizes Google Firebase for push notifications and crash reporting. These services operate under their own terms and privacy policies.</p>
+      </section>
+
+      <section id="s9">
+        <div class="section-header"><span class="section-num">09</span><h2>Limitation of Liability</h2></div>
+        <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. We shall not be liable for any direct, indirect, or consequential damages resulting from your reliance on App content or security incidents.</p>
+      </section>
+
+      <section id="s14">
+        <div class="section-header"><span class="section-num">14</span><h2>Governing Law</h2></div>
+        <p>These Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>. Any disputes shall be subject to the exclusive jurisdiction of the courts located in India.</p>
+      </section>
+
+      <section id="s15">
+        <div class="section-header"><span class="section-num">15</span><h2>Contact Information</h2></div>
+        <p>If you have any questions regarding these Terms, please reach out via our <strong>Contact Us</strong> portal or directly at:</p>
+        <p><strong>blackbytes.team@protonmail.com</strong></p>
+      </section>
+
+      <footer>
+        <span class="footer-brand">BlackBytes: Focus on Security</span>
+        <span class="date-chip">© 2026 All Rights Reserved</span>
+      </footer>
+    </div>
+  </body>
+</html>
