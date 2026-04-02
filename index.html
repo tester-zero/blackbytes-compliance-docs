@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compliance Hub — BlackBytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --border: #1e1e1e;
+        --border2: #2a2a2a;
+        --accent: #e8ff5a;
+        --accent2: #5affd6;
+        --text: #e2e2e2;
+        --muted: #6b6b6b;
+        --white: #ffffff;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden;
+      }
+
+      /* Noise Overlay to match Policy Page */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.025;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .hub-container {
+        position: relative;
+        z-index: 1;
+        max-width: 480px;
+        width: 100%;
+        padding: 40px 24px;
+        text-align: center;
+        animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .brand-icon {
+        background: var(--surface);
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      }
+
+      .brand-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      h1 {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        color: var(--white);
+        margin-bottom: 8px;
+        letter-spacing: -0.03em;
+      }
+
+      p.subtitle {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 48px;
+        line-height: 1.6;
+      }
+
+      .doc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .doc-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .doc-link:hover {
+        border-color: var(--accent);
+        transform: scale(1.02);
+        background: #161616;
+      }
+
+      .doc-info {
+        text-align: left;
+      }
+
+      .doc-name {
+        display: block;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--white);
+        margin-bottom: 2px;
+      }
+
+      .doc-meta {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .doc-arrow {
+        color: var(--accent);
+        font-size: 18px;
+        transition: transform 0.2s ease;
+      }
+
+      .doc-link:hover .doc-arrow {
+        transform: translateX(4px);
+      }
+
+      /* Disabled state for future docs */
+      .doc-link.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        filter: grayscale(1);
+      }
+
+      .doc-link.disabled:hover {
+        transform: none;
+        border-color: var(--border);
+      }
+
+      footer {
+        margin-top: 64px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hub-container">
+      <div class="brand-icon">
+        <img
+              src="assets/app_icon.webp"
+              alt="BlackBytes Icon"
+              class="title-icon"
+              width="32"
+              height="32"
+            />
+      </div>
+
+      <h1>BlackBytes: Darkweb to Devs</h1>
+      <p class="subtitle">Official legal documentation and privacy standards for the BlackBytes ecosystem.</p>
+
+      <div class="doc-list">
+        <a href="privacy-policy/blackbytes-privacy-policy.html" class="doc-link">
+          <div class="doc-info">
+            <span class="doc-name">Privacy Policy</span>
+            <span class="doc-meta">Effective April 1, 2026</span>
+          </div>
+          <span class="doc-arrow">→</span>
+        </a>
+
+        <div class="doc-link disabled">
+          <div class="doc-info">
+            <span class="doc-name">Terms of Service</span>
+            <span class="doc-meta">Coming Soon</span>
+          </div>
+          <span class="doc-arrow">🔒</span>
+        </div>
+      </div>
+
+      <footer>
+        &copy; 2026 BLACKBYTES &middot; FOCUS ON SECURITY
+      </footer>
+    </div>
+  </body>
+</html>

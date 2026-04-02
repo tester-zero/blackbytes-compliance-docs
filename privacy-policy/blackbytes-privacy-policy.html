@@ -1,0 +1,1771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — BlackBytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --border: #1e1e1e;
+        --border2: #2a2a2a;
+        --accent: #e8ff5a;
+        --accent2: #5affd6;
+        --text: #e2e2e2;
+        --muted: #6b6b6b;
+        --muted2: #444444;
+        --white: #ffffff;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.75;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── NOISE OVERLAY ── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0.025;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ── LAYOUT ── */
+      .wrapper {
+        position: relative;
+        z-index: 1;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 24px 80px;
+      }
+
+      /* ── HEADER ── */
+      header {
+        padding: 52px 0 48px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      /* App Icon */
+      .app-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.25),
+          0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .app-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .brand-name {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+
+      .header-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .title-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .title-icon {
+        flex-shrink: 0;
+      }
+
+      .page-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 6vw, 42px);
+        letter-spacing: -0.03em;
+        color: var(--white);
+        line-height: 1.1;
+      }
+
+      .dates {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .date-chip {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .date-chip::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* ── SUMMARY CARDS ── */
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 64px;
+      }
+
+      .summary-card {
+        background: var(--surface);
+        padding: 20px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .summary-card .label {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .summary-card .value {
+        font-size: 13px;
+        color: var(--text);
+        font-weight: 400;
+      }
+
+      .summary-card .value.good {
+        color: var(--accent2);
+      }
+
+      /* ── SECTION ── */
+      section {
+        margin-bottom: 56px;
+        animation: fadeUp 0.5s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-num {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: clamp(16px, 3vw, 20px);
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+
+      h3 {
+        font-family: "Syne", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--text);
+        letter-spacing: 0.01em;
+        margin: 28px 0 10px;
+      }
+
+      p {
+        color: var(--text);
+        margin-bottom: 14px;
+        font-size: 14.5px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ── NO-COLLECT GRID ── */
+      .no-collect-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .no-collect-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 16px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .no-collect-item .icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-top: 1px;
+        color: var(--accent2);
+      }
+
+      /* ── TABLE ── */
+      .table-wrap {
+        overflow-x: auto;
+        margin-top: 16px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      thead tr {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border2);
+      }
+
+      th {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 13px 18px;
+        text-align: left;
+        font-weight: 400;
+      }
+
+      td {
+        padding: 12px 18px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      tbody tr:hover {
+        background: rgba(255, 255, 255, 0.018);
+      }
+
+      td:first-child {
+        color: var(--white);
+        font-weight: 400;
+      }
+
+      /* ── CALLOUT ── */
+      .callout {
+        display: flex;
+        gap: 14px;
+        padding: 18px 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: 13.5px;
+        line-height: 1.6;
+      }
+
+      .callout.info {
+        background: rgba(90, 255, 214, 0.06);
+        border: 1px solid rgba(90, 255, 214, 0.18);
+        color: var(--text);
+      }
+
+      .callout.warn {
+        background: rgba(232, 255, 90, 0.05);
+        border: 1px solid rgba(232, 255, 90, 0.18);
+        color: var(--text);
+      }
+
+      .callout-icon {
+        font-size: 16px;
+        flex-shrink: 0;
+        line-height: 1.6;
+      }
+
+      /* ── RIGHTS GRID ── */
+      .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .right-card {
+        padding: 16px 18px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .right-card .rtitle {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .right-card .rtitle::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .right-card .rdesc {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      /* ── SERVICE CARD ── */
+      .service-card {
+        padding: 20px 22px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .service-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        gap: 10px;
+      }
+
+      .service-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--white);
+      }
+
+      .service-badge {
+        font-family: "DM Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: rgba(232, 255, 90, 0.08);
+        border: 1px solid rgba(232, 255, 90, 0.2);
+        color: var(--accent);
+        white-space: nowrap;
+      }
+
+      .service-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .service-row {
+        display: flex;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .service-row .sk {
+        color: var(--muted);
+        flex-shrink: 0;
+        min-width: 70px;
+      }
+
+      .service-row .sv {
+        color: var(--text);
+      }
+
+      /* ── CONTACT BOX ── */
+      .contact-box {
+        margin-top: 20px;
+        padding: 28px 30px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "DM Mono", monospace;
+        font-size: 14px;
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+
+      .contact-email:hover {
+        opacity: 0.75;
+      }
+
+      .contact-desc {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding-top: 36px;
+        margin-top: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .footer-brand {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--muted2);
+        letter-spacing: -0.01em;
+      }
+
+      .footer-copy {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* ── TOC ── */
+      .toc {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px 26px;
+        margin-bottom: 56px;
+      }
+
+      .toc-title {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .toc-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 2px;
+      }
+
+      .toc-list li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        color: var(--muted);
+        text-decoration: none;
+        transition:
+          color 0.15s,
+          background 0.15s;
+      }
+
+      .toc-list li a:hover {
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .toc-list li a .toc-num {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      /* ── BIG NOTICE ── */
+      .big-notice {
+        text-align: center;
+        padding: 40px 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(232, 255, 90, 0.04) 0%,
+          rgba(90, 255, 214, 0.04) 100%
+        );
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        margin-bottom: 64px;
+      }
+
+      .big-notice p {
+        font-size: 13px;
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .big-notice strong {
+        display: block;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: clamp(18px, 4vw, 26px);
+        color: var(--white);
+        letter-spacing: -0.025em;
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: var(--accent2);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      strong {
+        font-weight: 500;
+        color: var(--white);
+      }
+
+      /* ── STAGGER ANIMATIONS ── */
+      section:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      section:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      section:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      section:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      section:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      section:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+
+      /* ── MOBILE ── */
+      @media (max-width: 600px) {
+        .wrapper {
+          padding: 0 16px 60px;
+        }
+        header {
+          padding: 36px 0 36px;
+          gap: 22px;
+        }
+        .summary-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .toc-list {
+          grid-template-columns: 1fr;
+        }
+        .dates {
+          flex-direction: column;
+          gap: 6px;
+        }
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .contact-box {
+          padding: 20px 18px;
+        }
+        .service-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ── HEADER ── -->
+      <header>
+        <div class="header-meta">
+          <div class="title-row">
+            <img
+              src="assets/app_icon.webp"
+              alt="BlackBytes Icon"
+              class="title-icon"
+              width="32"
+              height="32"
+            />
+            <h1 class="page-title">Privacy Policy</h1>
+          </div>
+
+          <div class="dates">
+            <span class="date-chip">Last Updated: April 1, 2026</span>
+            <span class="date-chip">Effective: April 1, 2026</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ── SUMMARY STAT CARDS ── -->
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span class="label">Account Required</span>
+          <span class="value good">None</span>
+        </div>
+        <div class="summary-card">
+          <span class="label">Data Sold</span>
+          <span class="value good">Never</span>
+        </div>
+        <div class="summary-card">
+          <span class="label">Ads Displayed</span>
+          <span class="value good">None</span>
+        </div>
+        <div class="summary-card">
+          <span class="label">Location Tracked</span>
+          <span class="value good">No</span>
+        </div>
+        <div class="summary-card">
+          <span class="label">Feedback Retention</span>
+          <span class="value">12 Months</span>
+        </div>
+        <div class="summary-card">
+          <span class="label">Contact</span>
+          <span class="value">blackbytes.team@protonmail.com</span>
+        </div>
+      </div>
+
+      <!-- ── BIG NOTICE ── -->
+      <div class="big-notice">
+        <strong>Your data stays yours.</strong>
+        <p>
+          BlackBytes is built on a privacy-first foundation. We don't require
+          accounts, don't sell data, and don't run ads. This policy explains the
+          minimal data we do handle — and why.
+        </p>
+      </div>
+
+      <!-- ── TABLE OF CONTENTS ── -->
+      <div class="toc">
+        <p class="toc-title">Contents</p>
+        <ul class="toc-list">
+          <li>
+            <a href="#s1"
+              ><span class="toc-num">01</span> Introduction &amp; Scope</a
+            >
+          </li>
+          <li>
+            <a href="#s2"
+              ><span class="toc-num">02</span> What We Don't Collect</a
+            >
+          </li>
+          <li>
+            <a href="#s3"
+              ><span class="toc-num">03</span> Auto-Collected Information</a
+            >
+          </li>
+          <li>
+            <a href="#s4"><span class="toc-num">04</span> Info You Provide</a>
+          </li>
+          <li>
+            <a href="#s5"><span class="toc-num">05</span> AI Processing</a>
+          </li>
+          <li>
+            <a href="#s6"
+              ><span class="toc-num">06</span> Third-Party Services</a
+            >
+          </li>
+          <li>
+            <a href="#s7"
+              ><span class="toc-num">07</span> How Information Is Used</a
+            >
+          </li>
+          <li>
+            <a href="#s8"><span class="toc-num">08</span> Data Retention</a>
+          </li>
+          <li>
+            <a href="#s9"
+              ><span class="toc-num">09</span> Storage &amp; Security</a
+            >
+          </li>
+          <li>
+            <a href="#s10"
+              ><span class="toc-num">10</span> Your Privacy Rights</a
+            >
+          </li>
+          <li>
+            <a href="#s11"><span class="toc-num">11</span> Do Not Track</a>
+          </li>
+          <li>
+            <a href="#s12"
+              ><span class="toc-num">12</span> Children's Privacy</a
+            >
+          </li>
+          <li>
+            <a href="#s13"
+              ><span class="toc-num">13</span> International Transfers</a
+            >
+          </li>
+          <li>
+            <a href="#s14"><span class="toc-num">14</span> Policy Changes</a>
+          </li>
+          <li>
+            <a href="#s15"><span class="toc-num">15</span> Consent</a>
+          </li>
+          <li>
+            <a href="#s16"><span class="toc-num">16</span> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── S1 ── -->
+      <section id="s1">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2>Introduction &amp; Scope</h2>
+        </div>
+        <p>
+          Welcome to BlackBytes. This Privacy Policy explains how we handle
+          information when you use the BlackBytes mobile application — an
+          AI-powered news aggregation and summarization app that presents
+          concise, swipeable summaries while always displaying the original
+          source.
+        </p>
+        <p>
+          This policy applies to all users regardless of location and is
+          designed to comply with GDPR (EU), CCPA/CPRA (California), CalOPPA
+          (California), PIPEDA (Canada), and the Privacy Act 1988 (Australia).
+        </p>
+        <p>
+          By using the BlackBytes App, you acknowledge that you have read and
+          understood this Privacy Policy.
+        </p>
+      </section>
+
+      <!-- ── S2 ── -->
+      <section id="s2">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2>Information We Do NOT Collect</h2>
+        </div>
+        <p>
+          BlackBytes is designed with privacy as a core principle. We want to be
+          transparent about what we never collect:
+        </p>
+
+        <div class="no-collect-grid">
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Personal identifiers (name, email)</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Account or login information</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Contact lists or address book</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Location data (precise or approximate)</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Photos, videos, or device files</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Financial or payment information</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Biometric data of any kind</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Health or fitness information</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Messages, emails, or communications</span>
+          </div>
+        </div>
+
+        <div class="callout warn" style="margin-top: 20px">
+          <span class="callout-icon">⚑</span>
+          <span
+            ><strong
+              >We do NOT sell, rent, trade, or share your personal data</strong
+            >
+            with third parties for marketing or advertising purposes —
+            ever.</span
+          >
+        </div>
+      </section>
+
+      <!-- ── S3 ── -->
+      <section id="s3">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2>Information That May Be Automatically Collected</h2>
+        </div>
+        <p>
+          While we minimize data collection, certain limited technical
+          information may be collected through third-party services to keep the
+          App functioning and improving.
+        </p>
+
+        <h3>3.1 Device Information</h3>
+        <p>
+          When you use the App, the following may be collected in a
+          non-identifying manner:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Point</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Device type &amp; model</td>
+                <td>"Android Phone"</td>
+              </tr>
+              <tr>
+                <td>Operating system version</td>
+                <td>"Android 14"</td>
+              </tr>
+              <tr>
+                <td>App version number</td>
+                <td>"1.2.0"</td>
+              </tr>
+              <tr>
+                <td>Language &amp; region settings</td>
+                <td>"en-US"</td>
+              </tr>
+              <tr>
+                <td>Screen resolution</td>
+                <td>"1080 × 2400"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.2 Crash Reports &amp; Diagnostics</h3>
+        <p>
+          To improve App stability, crash logs may include technical stack
+          traces, device state at time of crash (memory, battery), and app
+          performance metrics. This data contains no direct personal identifiers
+          such as name or email.
+        </p>
+      </section>
+
+      <!-- ── S4 ── -->
+      <section id="s4">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2>Information You Voluntarily Provide</h2>
+        </div>
+        <p>
+          When you use the feedback or contact form within the App, we may
+          collect:
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Message content</td>
+                <td>Yes</td>
+                <td>Respond to your inquiry</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>No</td>
+                <td>Contact forms only</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>No</td>
+                <td>Contact forms only</td>
+              </tr>
+              <tr>
+                <td>Rating</td>
+                <td>No</td>
+                <td>Feedback forms only</td>
+              </tr>
+              <tr>
+                <td>Device platform</td>
+                <td>Auto</td>
+                <td>Diagnosed technical issues</td>
+              </tr>
+              <tr>
+                <td>App version</td>
+                <td>Auto</td>
+                <td>Diagnosed technical issues</td>
+              </tr>
+              <tr>
+                <td>Timestamp</td>
+                <td>Auto</td>
+                <td>Track improvements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info" style="margin-top: 16px">
+          <span class="callout-icon">ℹ</span>
+          <span
+            >All user-submitted information is securely stored in
+            <strong>Google Firestore</strong> and retained for up to
+            <strong>12 months</strong>, after which it is automatically deleted.
+            It is never shared for marketing purposes.</span
+          >
+        </div>
+      </section>
+
+      <!-- ── S5 ── -->
+      <section id="s5">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2>AI Processing Disclosure</h2>
+        </div>
+        <p>
+          BlackBytes uses automated AI systems to generate concise summaries of
+          news articles. Here's what you need to know:
+        </p>
+
+        <div class="no-collect-grid">
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span
+              >Your personal info is <strong>never</strong> sent to AI
+              services</span
+            >
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span
+              >User data is <strong>not</strong> used to train AI models</span
+            >
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>No automated decision-making or profiling</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>AI summaries may occasionally contain inaccuracies</span>
+          </div>
+        </div>
+
+        <div class="callout warn" style="margin-top: 16px">
+          <span class="callout-icon">⚑</span>
+          <span
+            >We strongly recommend reviewing the
+            <strong>original source article</strong> for complete and accurate
+            information.</span
+          >
+        </div>
+      </section>
+
+      <!-- ── S6 ── -->
+      <section id="s6">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2>Third-Party Services</h2>
+        </div>
+        <p>
+          BlackBytes uses the following third-party services to operate and
+          improve the App:
+        </p>
+
+        <div class="service-card">
+          <div class="service-header">
+            <span class="service-title">Firebase Cloud Messaging</span>
+            <span class="service-badge">Google LLC</span>
+          </div>
+          <div class="service-rows">
+            <div class="service-row">
+              <span class="sk">Purpose</span
+              ><span class="sv"
+                >Deliver push notifications about new content and updates</span
+              >
+            </div>
+            <div class="service-row">
+              <span class="sk">Data</span
+              ><span class="sv"
+                >Unique device token for notification delivery</span
+              >
+            </div>
+            <div class="service-row">
+              <span class="sk">Control</span
+              ><span class="sv"
+                >Disable via device system settings at any time</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-header">
+            <span class="service-title">Firebase Crashlytics</span>
+            <span class="service-badge">Google LLC</span>
+          </div>
+          <div class="service-rows">
+            <div class="service-row">
+              <span class="sk">Purpose</span
+              ><span class="sv"
+                >Collect crash reports to improve App stability</span
+              >
+            </div>
+            <div class="service-row">
+              <span class="sk">Data</span
+              ><span class="sv"
+                >Technical crash data (see §3.2) — no personal identifiers</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-header">
+            <span class="service-title">Google Firestore</span>
+            <span class="service-badge">Google LLC</span>
+          </div>
+          <div class="service-rows">
+            <div class="service-row">
+              <span class="sk">Purpose</span
+              ><span class="sv"
+                >Securely store user feedback and contact form submissions</span
+              >
+            </div>
+            <div class="service-row">
+              <span class="sk">Data</span
+              ><span class="sv"
+                >Information you voluntarily provide (see §4)</span
+              >
+            </div>
+            <div class="service-row">
+              <span class="sk">Security</span
+              ><span class="sv">Encrypted in transit and at rest</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-header">
+            <span class="service-title">Content Delivery</span>
+            <span class="service-badge">Remote Servers</span>
+          </div>
+          <div class="service-rows">
+            <div class="service-row">
+              <span class="sk">Purpose</span
+              ><span class="sv">Fetch news content and articles</span>
+            </div>
+            <div class="service-row">
+              <span class="sk">Data Sent</span
+              ><span class="sv">Only technical request information</span>
+            </div>
+            <div class="service-row">
+              <span class="sk">IP Address</span
+              ><span class="sv"
+                >Not stored directly; Google Firebase may process for
+                infrastructure purposes</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 14px; font-size: 13px; color: var(--muted)">
+          For more:
+          <a href="https://policies.google.com/privacy" target="_blank"
+            >Google Privacy Policy</a
+          >
+          ·
+          <a href="https://firebase.google.com/support/privacy" target="_blank"
+            >Firebase Privacy &amp; Security</a
+          >
+        </p>
+      </section>
+
+      <!-- ── S7 ── -->
+      <section id="s7">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2>How Information Is Used</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Purpose</th>
+                <th>Legal Basis (GDPR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Delivering enabled push notifications</td>
+                <td>Consent / Legitimate Interest</td>
+              </tr>
+              <tr>
+                <td>Improving App features and UX</td>
+                <td>Legitimate Interest</td>
+              </tr>
+              <tr>
+                <td>Fixing bugs and improving stability</td>
+                <td>Legitimate Interest</td>
+              </tr>
+              <tr>
+                <td>Ensuring security and preventing abuse</td>
+                <td>Legitimate Interest</td>
+              </tr>
+              <tr>
+                <td>Responding to user feedback</td>
+                <td>Consent / Legitimate Interest</td>
+              </tr>
+              <tr>
+                <td>Complying with legal obligations</td>
+                <td>Legal Obligation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout info" style="margin-top: 16px">
+          <span class="callout-icon">ℹ</span>
+          <span
+            >We <strong>never</strong> use collected information for targeted
+            advertising, user profiling, selling to third parties, cross-app
+            tracking, or marketing communications.</span
+          >
+        </div>
+      </section>
+
+      <!-- ── S8 ── -->
+      <section id="s8">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2>Data Retention Policy</h2>
+        </div>
+        <p>
+          We retain information only as long as necessary for the purposes
+          described in this policy:
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Type</th>
+                <th>Retention Period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Crash Reports</td>
+                <td>Up to 90 days</td>
+              </tr>
+              <tr>
+                <td>FCM Tokens</td>
+                <td>Until App is uninstalled or token is refreshed</td>
+              </tr>
+              <tr>
+                <td>Local App Data</td>
+                <td>Until you clear App data or uninstall</td>
+              </tr>
+              <tr>
+                <td>User Feedback / Contact Submissions</td>
+                <td>Up to 12 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 14px; font-size: 13px; color: var(--muted)">
+          After the retention period, data is automatically deleted or
+          anonymized so it can no longer be associated with your device.
+        </p>
+      </section>
+
+      <!-- ── S9 ── -->
+      <section id="s9">
+        <div class="section-header">
+          <span class="section-num">09</span>
+          <h2>Data Storage &amp; Security</h2>
+        </div>
+
+        <h3>9.1 Local Storage</h3>
+        <p>
+          News content may be cached locally on your device for offline access.
+          This data is stored in the App's private storage area, is not
+          accessible to other apps, and is deleted when you uninstall.
+        </p>
+
+        <h3>9.2 Security Measures</h3>
+        <div class="no-collect-grid" style="margin-top: 10px">
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Encrypted data transmission (HTTPS/TLS)</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Secure third-party providers (Google Firebase)</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Regular security reviews</span>
+          </div>
+          <div class="no-collect-item">
+            <svg
+              class="icon"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M6 10l3 3 5-5" />
+            </svg>
+            <span>Minimal data collection practices</span>
+          </div>
+        </div>
+        <p style="margin-top: 14px; font-size: 13px; color: var(--muted)">
+          No method of electronic transmission or storage is 100% secure. We
+          cannot guarantee absolute security.
+        </p>
+      </section>
+
+      <!-- ── S10 ── -->
+      <section id="s10">
+        <div class="section-header">
+          <span class="section-num">10</span>
+          <h2>Your Privacy Rights</h2>
+        </div>
+
+        <h3>10.1 GDPR — European Union</h3>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="rtitle">Access</div>
+            <div class="rdesc">Request info about data processing</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Rectification</div>
+            <div class="rdesc">Request correction of inaccurate data</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Erasure</div>
+            <div class="rdesc">Request deletion ("right to be forgotten")</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Restriction</div>
+            <div class="rdesc">Request limitation of processing</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Portability</div>
+            <div class="rdesc">Receive your data in a portable format</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Object</div>
+            <div class="rdesc">Object to certain types of processing</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Withdraw Consent</div>
+            <div class="rdesc">
+              Withdraw at any time without affecting prior processing
+            </div>
+          </div>
+        </div>
+
+        <h3>10.2 CCPA/CPRA — California</h3>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="rtitle">Know</div>
+            <div class="rdesc">
+              Request disclosure of data collected about you
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Delete</div>
+            <div class="rdesc">
+              Request deletion of your personal information
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Opt-Out</div>
+            <div class="rdesc">Opt out of sale/sharing (we do not sell)</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Non-Discrimination</div>
+            <div class="rdesc">
+              Not discriminated against for exercising rights
+            </div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Correct</div>
+            <div class="rdesc">Request correction of inaccurate data</div>
+          </div>
+        </div>
+
+        <h3>10.3 PIPEDA — Canada</h3>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="rtitle">Access</div>
+            <div class="rdesc">Access personal information we hold</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Challenge</div>
+            <div class="rdesc">Challenge accuracy and completeness</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Withdraw Consent</div>
+            <div class="rdesc">Withdraw consent for data collection</div>
+          </div>
+        </div>
+
+        <h3>10.4 Australia — Privacy Act 1988</h3>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="rtitle">Access</div>
+            <div class="rdesc">Access your personal information</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Correction</div>
+            <div class="rdesc">Request correction of inaccurate info</div>
+          </div>
+          <div class="right-card">
+            <div class="rtitle">Complain</div>
+            <div class="rdesc">Lodge complaints with the OAIC</div>
+          </div>
+        </div>
+
+        <div class="callout info" style="margin-top: 24px">
+          <span class="callout-icon">ℹ</span>
+          <span
+            >To exercise any of these rights, contact us at
+            <a href="mailto:blackbytes.team@protonmail.com"
+              >blackbytes.team@protonmail.com</a
+            >. We respond within the timeframe required by applicable law
+            (typically 30 days).</span
+          >
+        </div>
+      </section>
+
+      <!-- ── S11 ── -->
+      <section id="s11">
+        <div class="section-header">
+          <span class="section-num">11</span>
+          <h2>Do Not Track Signals</h2>
+        </div>
+        <p>
+          Some web browsers transmit "Do Not Track" (DNT) signals. As BlackBytes
+          is a mobile application — not a website — traditional DNT signals do
+          not apply. You can control data collection through the App's Settings
+          menu.
+        </p>
+      </section>
+
+      <!-- ── S12 ── -->
+      <section id="s12">
+        <div class="section-header">
+          <span class="section-num">12</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>
+          BlackBytes is intended for a general audience and is not directed
+          toward children under the age of 13 (or the applicable age of digital
+          consent in your jurisdiction).
+        </p>
+        <p>
+          We do not knowingly collect personal information from children under
+          13. As the App does not require account creation or sensitive personal
+          information, age verification is not enforced. If you believe a child
+          has provided us personal information, please contact us immediately.
+        </p>
+        <p>We comply with COPPA and similar international regulations.</p>
+      </section>
+
+      <!-- ── S13 ── -->
+      <section id="s13">
+        <div class="section-header">
+          <span class="section-num">13</span>
+          <h2>International Data Transfers</h2>
+        </div>
+        <p>
+          As we use Google Firebase services, some technical data may be
+          processed on servers located outside your country of residence,
+          including in the United States. Google maintains appropriate
+          safeguards for international transfers, including Standard Contractual
+          Clauses (SCCs) approved by the European Commission and compliance with
+          the EU-US Data Privacy Framework where applicable.
+        </p>
+      </section>
+
+      <!-- ── S14 ── -->
+      <section id="s14">
+        <div class="section-header">
+          <span class="section-num">14</span>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes
+          in our practices, technology, or legal requirements. When we do, we
+          will update the "Last Updated" date at the top of this policy, provide
+          in-app notification for significant changes, and post the updated
+          policy within the App.
+        </p>
+        <p>
+          Your continued use of the App after changes are posted constitutes
+          your acceptance of the updated policy.
+        </p>
+      </section>
+
+      <!-- ── S15 ── -->
+      <section id="s15">
+        <div class="section-header">
+          <span class="section-num">15</span>
+          <h2>Consent</h2>
+        </div>
+        <p>
+          Where required by applicable law, we rely on your consent for certain
+          processing activities such as push notifications. By downloading,
+          installing, and using the BlackBytes App, you acknowledge the
+          practices described in this Privacy Policy.
+        </p>
+        <p>
+          You may withdraw consent at any time by disabling relevant features in
+          App settings, uninstalling the App, or contacting us directly.
+        </p>
+      </section>
+
+      <!-- ── S16 ── -->
+      <section id="s16">
+        <div class="section-header">
+          <span class="section-num">16</span>
+          <h2>Contact Information</h2>
+        </div>
+        <p>
+          BlackBytes is the data controller responsible for processing personal
+          information described in this policy. If you have any questions,
+          concerns, or requests, reach out:
+        </p>
+
+        <div class="contact-box">
+          <div>
+            <div
+              style="
+                font-family: &quot;Syne&quot;, sans-serif;
+                font-weight: 700;
+                color: var(--white);
+                font-size: 15px;
+                margin-bottom: 4px;
+              "
+            >
+              BlackBytes Support Team
+            </div>
+            <div class="contact-desc">India · Data Controller</div>
+          </div>
+          <a href="mailto:blackbytes.team@protonmail.com" class="contact-email">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <rect x="2" y="5" width="16" height="12" rx="2" />
+              <path d="M2 7l8 5 8-5" />
+            </svg>
+            blackbytes.team@protonmail.com
+          </a>
+          <div
+            style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 4px"
+          >
+            <div style="font-size: 12px; color: var(--muted)">
+              EU residents: contact your local Data Protection Authority
+            </div>
+          </div>
+          <div
+            style="
+              border-top: 1px solid var(--border);
+              padding-top: 14px;
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+            "
+          >
+            <div style="font-size: 12px; color: var(--muted)">
+              🇦🇺 Australia —
+              <a href="https://www.oaic.gov.au" target="_blank"
+                >www.oaic.gov.au</a
+              >
+            </div>
+            <div style="font-size: 12px; color: var(--muted)">
+              🇨🇦 Canada —
+              <a href="https://www.priv.gc.ca" target="_blank"
+                >www.priv.gc.ca</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FOOTER ── -->
+      <footer>
+        <span class="footer-brand">BlackBytes: Focus on Security</span>
+        <span class="footer-copy">© 2026 BlackBytes · All rights reserved</span>
+      </footer>
+    </div>
+  </body>
+</html>
