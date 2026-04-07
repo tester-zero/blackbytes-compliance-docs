@@ -43,7 +43,6 @@
         overflow-x: hidden;
       }
 
-      /* Subtle noise texture for a tactical feel */
       body::before {
         content: "";
         position: fixed;
@@ -98,7 +97,71 @@
         line-height: 1.6;
       }
 
-      /* --- CONTACT ENTITY SECTION (FOR PLAY STORE COMPLIANCE) --- */
+      /* --- BETA TESTING CARD --- */
+      .beta-card {
+        background: rgba(90, 255, 214, 0.03);
+        border: 1px solid var(--accent2);
+        border-radius: 18px;
+        padding: 24px;
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .beta-label {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        color: var(--accent2);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .beta-label::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--accent2);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px var(--accent2);
+      }
+
+      .beta-step {
+        margin-bottom: 16px;
+      }
+
+      .beta-step:last-child { margin-bottom: 0; }
+
+      .step-num {
+        font-family: "DM Mono", monospace;
+        color: var(--accent2);
+        font-size: 12px;
+        margin-right: 8px;
+      }
+
+      .beta-text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text);
+      }
+
+      .beta-link {
+        color: var(--white);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        font-weight: 500;
+        transition: color 0.2s;
+        word-break: break-all;
+      }
+
+      .beta-link:hover {
+        color: var(--accent2);
+      }
+
+      /* --- CONTACT ENTITY SECTION --- */
       .contact-entity {
         background: rgba(232, 255, 90, 0.03);
         border: 1px solid var(--border2);
@@ -184,8 +247,6 @@
 
       .doc-arrow { color: var(--accent); font-size: 18px; }
 
-      .disabled { opacity: 0.4; cursor: not-allowed; }
-
       footer {
         margin-top: 60px;
         font-family: "DM Mono", monospace;
@@ -204,6 +265,25 @@
 
       <h1>Compliance Hub</h1>
       <p class="subtitle">Official transparency and legal documentation for the BlackBytes ecosystem.</p>
+
+      <div class="beta-card">
+        <span class="beta-label">Available for Beta Testing</span>
+        
+        <div class="beta-step">
+          <span class="step-num">01</span>
+          <span class="beta-text">Join the <a href="https://groups.google.com/g/blackbytes-app-testers" target="_blank" class="beta-link">Google Group</a> to authorize your account.</span>
+        </div>
+
+        <div class="beta-step">
+          <span class="step-num">02</span>
+          <span class="beta-text">Visit the <a href="https://play.google.com/apps/testing/com.blackbytes.app" target="_blank" class="beta-link">Opt-in Page</a> and click "Become a Tester."</span>
+        </div>
+
+        <div class="beta-step">
+          <span class="step-num">03</span>
+          <span class="beta-text">Download BlackBytes directly from the Google Play Store.</span>
+        </div>
+      </div>
 
       <div class="contact-entity">
         <span class="entity-label">Publishing Entity</span>
@@ -229,7 +309,6 @@
           </div>
           <span class="doc-arrow">→</span>
         </a>
-
       </div>
 
       <footer>
